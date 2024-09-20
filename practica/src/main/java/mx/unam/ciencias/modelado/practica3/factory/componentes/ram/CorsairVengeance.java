@@ -1,16 +1,16 @@
-package mx.unam.ciencias.modelado.practica3.factory.componentes.fuenteDePoder;
+package mx.unam.ciencias.modelado.practica3.factory.componentes.ram;
 /**
- * Fuente de poder especifica para el ordenador.
+ * Ram concreta para el procesador.
  */
-public class CorsairCX {
-    /** Nombre de la fuente */ 
-    String nombre = "CX750";
-    /** Marca de la fuente  */ 
+public class CorsairVengeance{
+    /** Nombre de la ram */ 
+    String nombre = "Vengance";
+    /** Marca de la ram */ 
     String marca = "Corsair";
-    /** Potencia de la fuente */ 
-    int potencia = 750;
+    /** Nombre del socket */ 
+    int capacidad = 64;
     /** Costo */ 
-    double costo = 1720;
+    double costo = 3300;
     /**
      * Getter del nombre.
      * @return nombre
@@ -26,11 +26,11 @@ public class CorsairCX {
         return marca;
     }
     /**
-     * Getter de la potencia.
-     * @return potencia
+     * Getter de la capacidad.
+     * @return capacidad
      */
-    public int getPotencia() {
-        return potencia;
+    public int getCapacidad() {
+        return capacidad;
     }
     /**
      * Getter del costo.

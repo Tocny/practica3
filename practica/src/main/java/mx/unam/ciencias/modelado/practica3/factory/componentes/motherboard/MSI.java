@@ -1,16 +1,16 @@
-package mx.unam.ciencias.modelado.practica3.factory.componentes.fuenteDePoder;
+package mx.unam.ciencias.modelado.practica3.factory.componentes.motherboard;
 /**
- * Fuente de poder especifica para el ordenador.
+ * Tarjetas madres especificas para Intel.
  */
-public class MSIMag {
-    /** Nombre de la fuente */ 
-    String nombre = "Mag650";
-    /** Marca de la fuente  */ 
+public class MSI {
+    /** Nombre de la tarjeta madre */ 
+    String nombre = "Pro Micro";
+    /** Marca de la tarjeta madre */ 
     String marca = "MSI";
-    /** Potencia de la fuente */ 
-    int potencia = 650;
+    /** Nombre del socket */ 
+    String socket = "B760";
     /** Costo */ 
-    double costo = 1150;
+    double costo = 4200;
     /**
      * Getter del nombre.
      * @return nombre
@@ -26,11 +26,11 @@ public class MSIMag {
         return marca;
     }
     /**
-     * Getter de la potencia.
-     * @return potencia
+     * Getter del socket.
+     * @return socket
      */
-    public int getPotencia() {
-        return potencia;
+    public String getSocket() {
+        return socket;
     }
     /**
      * Getter del costo.

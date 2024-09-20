@@ -1,6 +1,6 @@
 package mx.unam.ciencias.modelado.practica3.factory.componentes.gpu;
 /**
- * Procesador concreto de la marca Intel.
+ * GPU concreto para la tarjeta madre.
  */
 public class GTX1030 {
     /** Nombre de la GPU */ 

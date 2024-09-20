@@ -1,6 +1,6 @@
 package mx.unam.ciencias.modelado.practica3.factory.componentes.fuenteDePoder;
 /**
- * Procesador concreto de la marca Intel.
+ * Fuente de poder especifica para el ordenador.
  */
 public class CoolerMaster{
     /** Nombre de la fuente */ 

@@ -1,6 +1,6 @@
 package mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro;
 /**
- * Procesador concreto de la marca Intel.
+ * Disco duro especifico para el ordenador.
  */
 public class Samsung {
     /** Nombre del disco */ 
