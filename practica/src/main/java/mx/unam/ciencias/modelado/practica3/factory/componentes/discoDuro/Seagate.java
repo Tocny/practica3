@@ -3,10 +3,15 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro;
  * Procesador concreto de la marca Intel.
  */
 public class Seagate {
+    /** Nombre del disco */ 
     String nombre = "PORTR1";
+    /** Marca del disco */
     String marca = "Seagate";
+    /** Capacidad del disco */ 
     int capacidad = 960;
+    /** Tipo del disco */ 
     String tipoDeDisco= "SDD";
+    /** Costo */ 
     double costo = 3900;
     /**
      * Getter del nombre del disco duro.

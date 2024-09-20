@@ -3,9 +3,13 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.cpu;
  * Procesador concreto de la marca Intel.
  */
 public class Corei5 {
+    /** Nombre del procesador */ 
     String nombre = "Core i5";
+    /** Marca del procesador */ 
     String marca = "Intel";
+    /** Numero de nucleos */ 
     int numeroDeNucleos = 8;
+    /** Costo */ 
     double costo = 2900;
     /**
      * Getter del nombre del procesador.

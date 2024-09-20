@@ -3,10 +3,15 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro;
  * Procesador concreto de la marca Intel.
  */
 public class Kingston {
+    /** Nombre del disco */ 
     String nombre = "A400";
+    /** Marca del disco */ 
     String marca = "Kingston";
+    /** Capacidad del disco */ 
     int capacidad = 480;
+    /** Tipo del disco */ 
     String tipoDeDisco= "SATA III";
+    /** Costo */ 
     double costo = 670;
     /**
      * Getter del nombre del disco duro.

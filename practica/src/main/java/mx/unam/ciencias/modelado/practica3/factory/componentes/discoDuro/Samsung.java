@@ -3,10 +3,15 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro;
  * Procesador concreto de la marca Intel.
  */
 public class Samsung {
+    /** Nombre del disco */ 
     String nombre = "870EVO";
+    /** Marca del disco */
     String marca = "Samsung";
+    /** Capacidad del disco */ 
     int capacidad = 250;
+    /** Tipo del disco */ 
     String tipoDeDisco= "SDD";
+    /** Costo */ 
     double costo = 1565;
     /**
      * Getter del nombre del disco duro.
