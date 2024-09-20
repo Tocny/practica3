@@ -1,58 +1,56 @@
 package mx.unam.ciencias.modelado.practica3.factory.fabricas;
 
-import mx.unam.ciencias.modelado.practica3.factory.componente.*;
-
 /**
- * Clase que representa una fabrica de componentes "Standar".
+ * Clase que representa una fabrica de componentes "bajos".
  */
-public class FactoryComponenteStandar implements ComponenteFactory{
+public class FactoryComponenteBajo implements ComponenteFactory{
 
     /**
      * Implementación del creador de CPU
-     * @return una instancia del componente Corei7.
+     * @return una instancia del componente Corei3.
      */
     @Override public CPU creaCPU(){
-        return new Corei7();
+        return new Corei3();
     }
     
     /**
      * Implementación del creador de GPU's.
-     * @return una instancia del componente RTX4070.
+     * @return una instancia del componente GTX1030.
      */
     @Override public GPU creaGPU(){
-        return new RTX4070();
+        return new GTX1030();
     }
 
     /**
      * Implementación del creador de memoria ram.
-     * @return una instancia del componente KingstonFury.
+     * @return una instancia del componente AdataXPG.
      */
     @Override public RAM creaRAM(){
-        return new KingstonFury();
+        return new AdataXPG();
     }
 
     /**
      * Implementación del creador de disco duro.
-     * @return una instancia del componente Samsung.
+     * @return una instancia del componente Seagate.
      */
     @Override public DiscoDuro creaDiscoDuro(){
-        return new Samsung();
+        return new Seagate();
     }
 
     /**
      * Implementación del creador de motherboard.
-     * @return una instancia del componente Motherboard.
+     * @return una instancia del componente ASUS.
      */
     @Override public Motherboard creaMotherboard(){
-        return new MSI();
+        return new ASUS();
     }
 
     /**
      * Implementación del creador de fuente de poder.
-     * @return una instancia del componente MSIMag.
+     * @return una instancia del componente CoolerMaster.
      */
     @Override public FuenteDePoder creaFuenteDepoder(){
-        return new MSIMag();
+        return new CoolerMaster();
     }
 
 
