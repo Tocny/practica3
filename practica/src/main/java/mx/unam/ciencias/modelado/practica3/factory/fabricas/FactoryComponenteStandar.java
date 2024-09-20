@@ -1,48 +1,48 @@
 package mx.unam.ciencias.modelado.practica3.factory.fabricas;
 
 /**
- * Clase que representa una fabrica de componentes "gamer".
+ * Clase que representa una fabrica de componentes "Standar".
  */
-public class FactoryComponenteGamer implements ComponenteFactory{
+public class FactoryComponenteStandar implements ComponenteFactory{
 
     /**
      * Implementación del creador de CPU
-     * @return una instancia del componente Corei9.
+     * @return una instancia del componente Corei3.
      */
     @Override public CPU creaCPU(){
-        return new Corei9();
+        return new Corei3();
     }
     
     /**
      * Implementación del creador de GPU's.
-     * @return una instancia del componente RTX3090.
+     * @return una instancia del componente GTX1030.
      */
     @Override public GPU creaGPU(){
-        return new RTX3090();
+        return new GTX1030();
     }
 
     /**
      * Implementación del creador de memoria ram.
-     * @return una instancia del componente CorsairVengeance.
+     * @return una instancia del componente AdataXPG.
      */
     @Override public RAM creaRAM(){
-        return new CorsairVengeance();
+        return new AdataXPG();
     }
 
     /**
      * Implementación del creador de disco duro.
-     * @return una instancia del componente Kingston.
+     * @return una instancia del componente Seagate.
      */
     @Override public DiscoDuro creaDiscoDuro(){
-        return new Kingston();
+        return new Seagate();
     }
 
     /**
      * Implementación del creador de motherboard.
-     * @return una instancia del componente Gigabyte.
+     * @return una instancia del componente Seagate.
      */
     @Override public Motherboard creaMotherboard(){
-        return new Gigabyte();
+        return new MSI();
     }
 
     /**
