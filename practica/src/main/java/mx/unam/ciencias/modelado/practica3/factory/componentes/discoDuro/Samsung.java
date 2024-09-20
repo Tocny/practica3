@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro;
 /**
  * Disco duro especifico para el ordenador.
  */
-public class Samsung {
+public class Samsung implements DiscoDuro{
     /** Nombre del disco */ 
     String nombre = "870EVO";
     /** Marca del disco */

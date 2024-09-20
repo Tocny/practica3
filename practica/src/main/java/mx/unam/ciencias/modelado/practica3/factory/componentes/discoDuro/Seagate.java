@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro;
 /**
  * Disco duro especifico para el ordenador.
  */
-public class Seagate {
+public class Seagate implements DiscoDuro{
     /** Nombre del disco */ 
     String nombre = "PORTR1";
     /** Marca del disco */

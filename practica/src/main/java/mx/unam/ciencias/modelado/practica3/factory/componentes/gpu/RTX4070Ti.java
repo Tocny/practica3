@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.gpu;
 /**
  * GPU concreto para la tarjeta madre.
  */
-public class RTX4070Ti {
+public class RTX4070Ti implements GPU{
     /** Nombre de la GPU */ 
     String nombre = "GeForce RTX 4070Ti";
     /** Marca de la GPU */ 

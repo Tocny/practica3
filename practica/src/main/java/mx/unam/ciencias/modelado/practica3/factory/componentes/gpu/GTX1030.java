@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.gpu;
 /**
  * GPU concreto para la tarjeta madre.
  */
-public class GTX1030 {
+public class GTX1030 implements GPU{
     /** Nombre de la GPU */ 
     String nombre = "GeForce GTX 1030";
     /** Marca de la GPU */ 

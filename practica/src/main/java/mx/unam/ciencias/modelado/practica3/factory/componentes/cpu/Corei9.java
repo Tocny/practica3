@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.cpu;
 /**
  * Procesador concreto de la marca Intel.
  */
-public class Corei9 {
+public class Corei9 implements CPU{
     /** Nombre del procesador */ 
     String nombre = "Core i9";
     /** Marca del procesador */ 

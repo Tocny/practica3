@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.ram;
 /**
  * Ram concreta para el procesador.
  */
-public class AdataXPG{
+public class AdataXPG implements RAM{
     /** Nombre de la ram */ 
     String nombre = "XPG";
     /** Marca de la ram */ 

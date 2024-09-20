@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.ram;
 /**
  * Ram concreta para el procesador.
  */
-public class KingstonFury{
+public class KingstonFury implements RAM{
     /** Nombre de la ram */ 
     String nombre = "Fury";
     /** Marca de la ram */ 

@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro;
 /**
  * Disco duro especifico para el ordenador.
  */
-public class Kingston {
+public class Kingston implements DiscoDuro{
     /** Nombre del disco */ 
     String nombre = "A400";
     /** Marca del disco */ 

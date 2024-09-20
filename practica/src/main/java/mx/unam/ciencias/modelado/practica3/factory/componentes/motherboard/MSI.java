@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.motherboard;
 /**
  * Tarjetas madres especificas para Intel.
  */
-public class MSI {
+public class MSI implements MotherBoard{
     /** Nombre de la tarjeta madre */ 
     String nombre = "Pro Micro";
     /** Marca de la tarjeta madre */ 

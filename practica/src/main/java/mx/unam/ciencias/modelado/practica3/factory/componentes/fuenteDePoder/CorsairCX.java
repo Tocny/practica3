@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.fuenteDePoder;
 /**
  * Fuente de poder especifica para el ordenador.
  */
-public class CorsairCX {
+public class CorsairCX implements FuenteDePoder{
     /** Nombre de la fuente */ 
     String nombre = "CX750";
     /** Marca de la fuente  */ 

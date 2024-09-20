@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.gpu;
 /**
  * GPU concreto para la tarjeta madre.
  */
-public class RTX3090 {
+public class RTX3090 implements GPU{
     /** Nombre de la GPU */ 
     String nombre = "GeForce RTX 3090";
     /** Marca de la GPU */ 

@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.motherboard;
 /**
  * Tarjetas madres especificas para Intel.
  */
-public class Gigabyte {
+public class Gigabyte implements MotherBoard{
     /** Nombre de la tarjeta madre */ 
     String nombre = "ATX";
     /** Marca de la tarjeta madre */ 

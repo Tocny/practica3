@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.ram;
 /**
  * Ram concreta para el procesador.
  */
-public class CorsairVengeance{
+public class CorsairVengeance implements RAM{
     /** Nombre de la ram */ 
     String nombre = "Vengance";
     /** Marca de la ram */ 

@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.fuenteDePoder;
 /**
  * Fuente de poder especifica para el ordenador.
  */
-public class MSIMag {
+public class MSIMag implements FuenteDePoder{
     /** Nombre de la fuente */ 
     String nombre = "Mag650";
     /** Marca de la fuente  */ 
