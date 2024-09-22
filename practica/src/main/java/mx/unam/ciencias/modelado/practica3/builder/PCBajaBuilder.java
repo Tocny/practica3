@@ -1,10 +1,10 @@
 package mx.unam.ciencias.modelado.practica3.builder;
 
-import mx.unam.ciencias.modelado.practica3.factory.fabricas.FactoryComponenteGamer;
+import mx.unam.ciencias.modelado.practica3.factory.fabricas.FactoryComponenteBajo;
 import mx.unam.ciencias.modelado.practica3.factory.fabricas.ComponenteFactory;
 
-/**Clase para armar una pc estandar. */
-public class PCGamerBuilder implements Builder{
+/**Clase para armar una pc de gama baja. */
+public class PCBajaBuilder implements Builder{
 
     /**La fabrica de componentes. */
     private ComponenteFactory fabrica;
@@ -12,8 +12,8 @@ public class PCGamerBuilder implements Builder{
     private PC pc;
 
     /**Constructor de la clase, inicializa atributos. */
-    public PCGamerBuilder(){
-        fabrica = new FactoryComponenteGamer();
+    public PCBajaBuilder(){
+        fabrica = new FactoryComponenteBajo();
         pc = new PC();
     }
 
