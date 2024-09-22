@@ -12,6 +12,16 @@ public class Menu{
     private Director director;
     /**Instancia de armador para determinar el constructor de la pc. */
     private Builder armador;
+    /**Lista de modelos de pc's */
+    private List<Builder> modelos;
+
+    public Menu(){
+        modelos = new ArrayList<>();
+        modelos.add(new PCGamerBuilder());
+        modelos.add(new PCStandarBuilder());
+        modelos.add(new PCBajaBuilder());
+        modelos.add(new PCPersonalizableBuilder());
+    }
 
     /**
      * Método que engloba los 4 posibles modelos de computadoras.
@@ -19,11 +29,10 @@ public class Menu{
      */
     private String menuModelos(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Modelos disponibles:\n");
-        sb.append("1. Computadora Gamer\n");
-        sb.append("2. Computadora de gama media\n");
-        sb.append("3. Computadora de gama baja\n");
-        sb.append("4. Diseño personalizado.");
+        int i = 0;
+        for(Builder modelo: modelos){
+            sb.append((++i) + ". " + modelo.getClass().getSimpleName().replace("Builder","") + "\n");
+        }
         return sb.toString();
     }
 
@@ -35,22 +44,9 @@ public class Menu{
         System.out.println("Bienvenidx a Los Amantes de Intel");
         System.out.println("Considere las siguientes opciones para su computadora:");
         System.out.println(menuModelos());
-        int opcion = MetodosGet.getInt("Escoja: ", "Entrada inválida", 1, 4);
+        int opcion = MetodosGet.getInt("Escoja: ", "Entrada inválida", 1, modelos.size());
 
-        switch(opcion){
-            case 1:
-                armador = new PCGamerBuilder();
-                break;
-            case 2:
-                armador = new PCStandarBuilder();
-                break;
-            case 3:
-                armador = new PCBajaBuilder();
-                break;
-            case 4:
-                armador = new PCPersonalizableBuilder();
-                break;
-        }
+        armador = modelos.get(opcion-1);
 
         this.director = new Director(armador);
         this.director.armaPC();

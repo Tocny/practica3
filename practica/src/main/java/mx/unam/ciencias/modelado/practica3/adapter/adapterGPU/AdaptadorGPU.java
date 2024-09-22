@@ -59,6 +59,6 @@ public class AdaptadorGPU implements GPU {
      */
     @Override
     public String descripcion() {
-        return radeon.description();
+        return radeon.description() + "[Con Adaptador]";
     }
 }

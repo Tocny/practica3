@@ -44,7 +44,7 @@ public class RadeonRX7600{
      * @return description
      */
     public String description() {
-        return getName() + " de " + getBrand() + " con memoria " + getMemoryType() + ".";
+        return getName() + " de " + getBrand() + " con memoria " + getMemoryType() + "($" + getCost() +")";
     }
 }
 

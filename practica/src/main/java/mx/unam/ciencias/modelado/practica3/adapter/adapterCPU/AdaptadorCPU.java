@@ -58,6 +58,6 @@ public class AdaptadorCPU implements CPU {
      */
     @Override
     public String descripcion() {
-        return ryzen.description();
+        return ryzen.description() + "[Con Adaptador]";
     }
 }

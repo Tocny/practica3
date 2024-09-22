@@ -10,6 +10,8 @@ import mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro.*;
 import mx.unam.ciencias.modelado.practica3.factory.componentes.ram.*;
 import mx.unam.ciencias.modelado.practica3.adapter.adapterCPU.*;
 import mx.unam.ciencias.modelado.practica3.adapter.adapterGPU.*;
+import java.util.List;
+import java.util.ArrayList;
 
 /**Clase para armar una pc personalizable. */
 public class PCPersonalizableBuilder implements Builder{
@@ -18,10 +20,28 @@ public class PCPersonalizableBuilder implements Builder{
     private ComponenteFactory fabrica;
     /**Una pc. */
     private PC pc;
+    /**Lista de procesadores*/
+    private List<CPU> listaCPU;
+    /**Lista de Tarjetas gráficas. */
+    private List<GPU> listaGPU;
+    /**Lista de discos duros. */
+    private List<DiscoDuro> listaDiscoDuro;
+    /**Lista de fuentes de poder. */
+    private List<FuenteDePoder> listaFuenteDePoder;
+    /**Lista de tarjetas madre. */
+    private List<Motherboard> listaMotherboard;
+    /**Lista de memorias ram */
+    private List<RAM> listaRAM;
 
     /**Constructor de la clase, inicializa atributos. */
     public PCPersonalizableBuilder(){
         pc = new PC();
+        listaCPU = new ArrayList<>();
+        listaGPU = new ArrayList<>();
+        listaDiscoDuro = new ArrayList<>();
+        listaFuenteDePoder = new ArrayList<>();
+        listaMotherboard = new ArrayList<>();
+        listaRAM = new ArrayList<>();
     }
 
     /**
@@ -29,40 +49,33 @@ public class PCPersonalizableBuilder implements Builder{
      * Emplea la fabrica para setear el cpu.
      */
     @Override public void instalaCPU(){
+        listaCPU.clear();
+        listaCPU.add(new Corei3());
+        listaCPU.add(new Corei5());
+        listaCPU.add(new Corei9());
+        listaCPU.add(new AdaptadorCPU(new Ryzen7()));
+
         System.out.println("Selecciona el procesador:");
-        System.out.println("1. Core i3");
-        System.out.println("2. Core i5");
-        System.out.println("3. Core i9");
-        System.out.println("4. Ryzen 7");
-
-        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, 4);
-
-        switch(opcion){
-            case 1:
-                fabrica = new FactoryComponenteBajo();
-                break;
-            case 2:
-                fabrica = new FactoryComponenteStandar();
-                break;
-            case 3:
-                fabrica = new FactoryComponenteGamer();
-                break;
-            case 4:
-                boolean eleccion = decidirIncompatible();
-                
-                if(!eleccion){
-                    instalaGPU();
-                } else{
-                    System.out.println("Se resolverá la incompatibilidad con un adaptador.");
-                }
-                
-                Ryzen7 ryzen = new Ryzen7();
-                AdaptadorCPU adaptador = new AdaptadorCPU(ryzen);
-                pc.setCPU(adaptador);
-                return;
+        int i = 0;
+        for(CPU procesador : listaCPU){
+            System.out.println((++i) + ". " + procesador.getNombre() + " $" + procesador.getCosto());
         }
 
-        pc.setCPU(fabrica.creaCPU());
+        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, listaCPU.size());
+        
+        if(opcion == 4){
+            boolean eleccion = decidirIncompatible();
+                
+            if(!eleccion){
+                instalaCPU();
+            } else{
+                System.out.println("Se resolverá la incompatibilidad con un adaptador.");
+            }
+        }
+
+        CPU procesadorElegido = listaCPU.get(opcion-1);
+
+        pc.setCPU(procesadorElegido);
     }
 
     /**
@@ -70,41 +83,34 @@ public class PCPersonalizableBuilder implements Builder{
      * Emplea la fabrica para setear la gpu.
      */
     @Override public void instalaGPU(){
-        System.out.println("Selecciona una tarjeta gráfica:");
-        System.out.println("1. GTX 1030");
-        System.out.println("2. RTX 4070Ti");
-        System.out.println("3. RTX 3090");
-        System.out.println("4. Radeon RX 7600");
+        listaGPU.clear();
+        listaGPU.add(new GTX1030());
+        listaGPU.add(new RTX4070Ti());
+        listaGPU.add(new RTX3090());
+        listaGPU.add(new AdaptadorGPU(new RadeonRX7600()));
 
-        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, 4);
+        System.out.println("Selecciona la tarjeta gráfica:");
 
-        switch(opcion){
-            case 1:
-                fabrica = new FactoryComponenteBajo();
-                break;
-            case 2:
-                fabrica = new FactoryComponenteStandar();
-                break;
-            case 3:
-                fabrica = new FactoryComponenteGamer();
-                break;
-            case 4:
-                boolean eleccion = decidirIncompatible();
-                
-                if(!eleccion){
-                    instalaGPU();
-                } else{
-                    System.out.println("Se resolverá la incompatibilidad con un adaptador.");
-                }
-
-                RadeonRX7600 ryzen = new RadeonRX7600();
-                AdaptadorGPU adaptador = new AdaptadorGPU(ryzen);
-                pc.setGPU(adaptador);
-                
-                return;
+        int i = 0;
+        for(GPU gpu : listaGPU){
+            System.out.println((++i) + ". " + gpu.getNombre() + " $" + gpu.getCosto());
         }
 
-        pc.setGPU(fabrica.creaGPU());
+        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, listaGPU.size());
+
+        if(opcion == 4){
+            boolean eleccion = decidirIncompatible();
+                
+            if(!eleccion){
+                instalaGPU();
+            } else{
+                System.out.println("Se resolverá la incompatibilidad con un adaptador.");
+            }
+        }
+
+        GPU gpuElegida = listaGPU.get(opcion-1);
+
+        pc.setGPU(gpuElegida);
     }
 
     /**
@@ -124,26 +130,21 @@ public class PCPersonalizableBuilder implements Builder{
      * Emplea la fabrica para setear la ram.
      */    
     @Override public void instalaRAM(){
-        System.out.println("Selecciona una memoria ram:");
-        System.out.println("1. Adata XPG");
-        System.out.println("2. Kinston Fury");
-        System.out.println("3. Corsair Vengeance");
+        listaRAM.add(new AdataXPG());
+        listaRAM.add(new KingstonFury());
+        listaRAM.add(new CorsairVengeance());
 
-        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, 3);
-
-        switch(opcion){
-            case 1:
-                fabrica = new FactoryComponenteBajo();
-                break;
-            case 2:
-                fabrica = new FactoryComponenteStandar();
-                break;
-            case 3:
-                fabrica = new FactoryComponenteGamer();
-                break;
+        System.out.println("Selecciona la memoria ram:");
+        int i = 0;
+        for(RAM ram : listaRAM){
+            System.out.println((++i) + ". " + ram.getNombre() + " $" + ram.getCosto());
         }
 
-        pc.setRAM(fabrica.creaRAM());
+        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, listaRAM.size());
+
+        RAM ramElegida = listaRAM.get(opcion-1);
+
+        pc.setRAM(ramElegida);
     }
 
     /**
@@ -151,26 +152,21 @@ public class PCPersonalizableBuilder implements Builder{
      * Emplea la fabrica para setear el disco duro.
      */
     @Override public void instalaDiscoDuro(){
-        System.out.println("Selecciona un disco duro:");
-        System.out.println("1. Seagate");
-        System.out.println("2. Samsung");
-        System.out.println("3. Kingston");
+        listaDiscoDuro.add(new Seagate());
+        listaDiscoDuro.add(new Samsung());
+        listaDiscoDuro.add(new Kingston());
 
-        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, 3);
-
-        switch(opcion){
-            case 1:
-                fabrica = new FactoryComponenteBajo();
-                break;
-            case 2:
-                fabrica = new FactoryComponenteStandar();
-                break;
-            case 3:
-                fabrica = new FactoryComponenteGamer();
-                break;
+        System.out.println("Selecciona el disco duro:");
+        int i = 0;
+        for(DiscoDuro discoDuro : listaDiscoDuro){
+            System.out.println((++i) + ". " + discoDuro.getNombre() + " $" + discoDuro.getCosto());
         }
 
-        pc.setDiscoDuro(fabrica.creaDiscoDuro());
+        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, listaDiscoDuro.size());
+
+        DiscoDuro discoElegido = listaDiscoDuro.get(opcion-1);
+
+        pc.setDiscoDuro(discoElegido);
     }
 
     /**
@@ -178,26 +174,22 @@ public class PCPersonalizableBuilder implements Builder{
      * Emplea la fabrica para setear la motherboard.
      */
     @Override public void instalaMotherboard(){
-        System.out.println("Selecciona una tarjeta madre:");
-        System.out.println("1. Gigabyte");
-        System.out.println("2. MSI");
-        System.out.println("3. ASUS");
+        listaMotherboard.add(new ASUS());
+        listaMotherboard.add(new MSI());
+        listaMotherboard.add(new Gigabyte());
 
-        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, 3);
+        System.out.println("Selecciona la tarjeta madre:");
 
-        switch(opcion){
-            case 1:
-                fabrica = new FactoryComponenteBajo();
-                break;
-            case 2:
-                fabrica = new FactoryComponenteStandar();
-                break;
-            case 3:
-                fabrica = new FactoryComponenteGamer();
-                break;
+        int i = 0;
+        for(Motherboard motherboard : listaMotherboard){
+            System.out.println((++i) + ". " + motherboard.getNombre() + " $" + motherboard.getCosto());
         }
 
-        pc.setMotherboard(fabrica.creaMotherboard());
+        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, listaMotherboard.size());
+
+        Motherboard motherboardElegida = listaMotherboard.get(opcion-1);
+
+        pc.setMotherboard(motherboardElegida);
     }
 
     /**
@@ -205,26 +197,23 @@ public class PCPersonalizableBuilder implements Builder{
      * Emplea la fabrica para setear la fuente de poder.
      */
     @Override public void instalaFuenteDePoder(){
-        System.out.println("Selecciona una fuente de poder:");
-        System.out.println("1. Corsair CX");
-        System.out.println("2. MSI Mag");
-        System.out.println("3. Cooler Master");
+        listaFuenteDePoder.add(new CorsairCX());
+        listaFuenteDePoder.add(new MSIMag());
+        listaFuenteDePoder.add(new CoolerMaster());
 
-        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, 3);
+        System.out.println("Selecciona la fuente de poder:");
 
-        switch(opcion){
-            case 1:
-                fabrica = new FactoryComponenteBajo();
-                break;
-            case 2:
-                fabrica = new FactoryComponenteStandar();
-                break;
-            case 3:
-                fabrica = new FactoryComponenteGamer();
-                break;
+        int i = 0;
+        for(FuenteDePoder fuentePoder : listaFuenteDePoder){
+            System.out.println((++i) + ". " + fuentePoder.getNombre() + " $" + fuentePoder.getCosto());
         }
 
-        pc.setFuenteDePoder(fabrica.creaFuenteDePoder());
+
+        int opcion = MetodosGet.getInt("Introduzca su elección", "Entrada Inválida", 1, listaFuenteDePoder.size());
+
+        FuenteDePoder fuenteDePoderElegida = listaFuenteDePoder.get(opcion-1);
+
+        pc.setFuenteDePoder(fuenteDePoderElegida);
     }
 
     /**
@@ -234,5 +223,5 @@ public class PCPersonalizableBuilder implements Builder{
     @Override public PC getPC(){
         return pc;
     }
-
 }
+
