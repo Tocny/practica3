@@ -6,14 +6,14 @@ import mx.unam.ciencias.modelado.practica3.factory.componentes.gpu.GPU;
 /**
  * Esta clase es un adaptador para la GPU
  */
-public class AdaptadorCPU implements GPU {
+public class AdaptadorGPU implements GPU {
     private RadeonRX7600 radeon;
 
     /**
-     * Constructor que recibe un objeto de tipo RadeonRX7600.
-     * @param radeon 
+     * Constructor que asigna el atributo.
+     * @param radeon una instancia de RadeonRX7600
      */
-    public AdaptadorCPU(RadeonRX7600 radeon) {
+    public AdaptadorGPU(RadeonRX7600 radeon) {
         this.radeon = radeon;
     }
 

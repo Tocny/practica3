@@ -7,6 +7,10 @@ public class Director{
     /**Instancia de Builder para armar PC's */
     private Builder constructorPC;
 
+    /**
+     * Constructor de la clase, incializa el atributo.
+     * @param constructorPC una instancia de Builder par armar la pc.
+     */
     public Director(Builder constructorPC){
         this.constructorPC = constructorPC;
     }
@@ -21,7 +25,10 @@ public class Director{
         constructorPC.instalaFuenteDePoder();
     }
 
-    /**Getter de la pc del constructor de pc's. */
+    /**
+     * Getter de la computadora del constructor
+     * @return la instancia de PC del atributo constructorPC.
+     */
     public PC getPC(){
         return constructorPC.getPC();
     }

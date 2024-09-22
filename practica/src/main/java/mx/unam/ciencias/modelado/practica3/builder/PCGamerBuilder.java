@@ -3,7 +3,7 @@ package mx.unam.ciencias.modelado.practica3.builder;
 import mx.unam.ciencias.modelado.practica3.factory.fabricas.FactoryComponenteGamer;
 import mx.unam.ciencias.modelado.practica3.factory.fabricas.ComponenteFactory;
 
-/**Clase para armar una pc gamer. */
+/**Clase para armar una pc estandar. */
 public class PCGamerBuilder implements Builder{
 
     /**La fabrica de componentes. */
