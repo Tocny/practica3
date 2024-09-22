@@ -1,1 +1,0 @@
-package mx.unam.ciencias.modelado.practica3.adapter.adapterGPU;

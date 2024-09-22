@@ -1,23 +1,42 @@
 package mx.unam.ciencias.modelado.practica3.adapter.adapterCPU;
-
-class Ryzen7 {
+/**
+ * Procesador concreto de la marca AMD.
+ */
+public class Ryzen7 implements CPU{
+    /** Nombre del procesador */ 
+    String nombre = "Ryzen 5800X";
+    /** Marca del procesador */ 
+    String marca = "AMD";
+    /** Numero de nucleos */ 
+    int numeroDeNucleos = 8;
+    /** Costo */ 
+    double costo = 3700;
+    /**
+     * Getter del nombre del procesador.
+     * @return nombre
+     */
     public String getName() {
-        return "Ryzen 7";
+        return nombre;
     }
-
+    /**
+     * Getter del nombre del marca.
+     * @return marca
+     */
     public String getBrand() {
-        return "AMD";
+        return marca;
     }
-
+    /**
+     * Getter del numero de nucleos.
+     * @return numeroDeNucleos
+     */
     public int getCores() {
-        return 8;
+        return numeroDeNucleos;
     }
-
+    /**
+     * Getter del costo del procesador.
+     * @return costo
+     */
     public double getCost() {
-        return 3700;
-    }
-
-    public String description() {
-        return getName() + " de " + getBrand() + " con " + getCores() + " cores.";
+        return costo;
     }
 }

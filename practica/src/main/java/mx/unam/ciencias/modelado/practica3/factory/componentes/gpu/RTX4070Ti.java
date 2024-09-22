@@ -5,7 +5,7 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.gpu;
 public class RTX4070Ti implements GPU{
     /** Nombre de la GPU */ 
     private String nombre = "GeForce RTX 4070Ti";
-    /** Marca de la GPU */ 
+    /** Marca de la GPU */
     private String marca = "NVIDIA";
     /** Numero de nucleos */ 
     private String tipoDeMemoria = "GDDR6X";
