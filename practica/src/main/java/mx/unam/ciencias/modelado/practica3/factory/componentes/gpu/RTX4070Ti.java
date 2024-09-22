@@ -1,13 +1,13 @@
 package mx.unam.ciencias.modelado.practica3.factory.componentes.gpu;
 /**
- * GPU concreto para la tarjeta madre.
+ * GPU concreto para la tarjeta grafica.
  */
 public class RTX4070Ti implements GPU{
     /** Nombre de la GPU */ 
     private String nombre = "GeForce RTX 4070Ti";
     /** Marca de la GPU */
     private String marca = "NVIDIA";
-    /** Numero de nucleos */ 
+    /** Tipo de memoria */ 
     private String tipoDeMemoria = "GDDR6X";
     /** Costo */ 
     private double costo = 11500;
