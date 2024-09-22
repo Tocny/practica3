@@ -15,6 +15,7 @@ public class Menu{
     /**Lista de modelos de pc's */
     private List<Builder> modelos;
 
+    /**Constructor de la clase, inicializa la lista de modelos */
     public Menu(){
         modelos = new ArrayList<>();
         modelos.add(new PCGamerBuilder());
