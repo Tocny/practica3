@@ -68,6 +68,7 @@ public class PCPersonalizableBuilder implements Builder{
                 
             if(!eleccion){
                 instalaCPU();
+                return;
             } else{
                 System.out.println("Se resolverá la incompatibilidad con un adaptador.");
             }
@@ -103,6 +104,7 @@ public class PCPersonalizableBuilder implements Builder{
                 
             if(!eleccion){
                 instalaGPU();
+                return;
             } else{
                 System.out.println("Se resolverá la incompatibilidad con un adaptador.");
             }
