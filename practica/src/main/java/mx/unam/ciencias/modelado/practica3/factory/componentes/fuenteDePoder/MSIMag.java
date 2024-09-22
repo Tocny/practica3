@@ -4,39 +4,52 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.fuenteDePoder;
  */
 public class MSIMag implements FuenteDePoder{
     /** Nombre de la fuente */ 
-    String nombre = "Mag650";
+    private String nombre = "Mag650";
     /** Marca de la fuente  */ 
-    String marca = "MSI";
+    private String marca = "MSI";
     /** Potencia de la fuente */ 
-    int potencia = 650;
+    private int potencia = 650;
     /** Costo */ 
-    double costo = 1150;
+    private double costo = 1150;
+
     /**
      * Getter del nombre.
      * @return nombre
      */
-    public String getNombre() {
+    @Override public String getNombre() {
         return nombre;
     }
+
     /**
      * Getter del nombre del marca.
      * @return marca
      */
-    public String getMarca() {
+    @Override public String getMarca() {
         return marca;
     }
+
     /**
      * Getter de la potencia.
      * @return potencia
      */
-    public int getPotencia() {
+    @Override public int getPotencia() {
         return potencia;
     }
+
     /**
      * Getter del costo.
      * @return costo
      */
-    public double getCosto() {
+    @Override public double getCosto() {
         return costo;
+    }
+
+    /**
+     * Método que brinda información del componente.
+     * @return una cadena que cuenta con las características del componente.
+     */
+    @Override public String descripcion() {
+        return String.format("%s %s de %dW ($%.2f)", 
+                getMarca(), getNombre(), getPotencia(), getCosto());
     }
 }

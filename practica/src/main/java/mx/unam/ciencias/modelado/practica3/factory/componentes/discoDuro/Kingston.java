@@ -4,48 +4,62 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.discoDuro;
  */
 public class Kingston implements DiscoDuro{
     /** Nombre del disco */ 
-    String nombre = "A400";
+    private String nombre = "A400";
     /** Marca del disco */ 
-    String marca = "Kingston";
+    private String marca = "Kingston";
     /** Capacidad del disco */ 
-    int capacidad = 480;
+    private int capacidad = 480;
     /** Tipo del disco */ 
-    String tipoDeDisco= "SATA III";
+    private String tipoDeDisco= "SATA III";
     /** Costo */ 
-    double costo = 670;
+    private double costo = 670;
+
     /**
      * Getter del nombre del disco duro.
      * @return nombre
      */
-    public String getNombre() {
+    @Override public String getNombre() {
         return nombre;
     }
+
     /**
      * Getter del nombre del marca.
      * @return marca
      */
-    public String getMarca() {
+    @Override public String getMarca() {
         return marca;
     }
+
     /**
      * Getter del la capacidad del disco duro.
      * @return capacidad
      */
-    public int getCapacidad() {
+    @Override public int getCapacidad() {
         return capacidad;
     }
+
     /**
      * Getter del tipo de disco.
      * @return tipodeDisco
      */
-    public String getTipoDeDisco() {
+    @Override public String getTipoDeDisco() {
         return tipoDeDisco;
     }
+
     /**
      * Getter del costo del disco.
      * @return costo
      */
-    public double getCosto() {
+    @Override public double getCosto() {
         return costo;
+    }
+
+    /**
+     * Método que brinda información del componente.
+     * @return una cadena que cuenta con las características del componente.
+     */
+    @Override public String descripcion() {
+        return String.format("%s %s de %d GB (%s) ($%.2f)", 
+                getMarca(), getNombre(), getCapacidad(), getTipoDeDisco(), getCosto());
     }
 }

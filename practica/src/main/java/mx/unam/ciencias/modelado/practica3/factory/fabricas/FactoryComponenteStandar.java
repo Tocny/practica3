@@ -8,56 +8,56 @@ import mx.unam.ciencias.modelado.practica3.factory.componentes.motherboard.*;
 import mx.unam.ciencias.modelado.practica3.factory.componentes.fuenteDePoder.*;
 
 /**
- * Clase que representa una fabrica de componentes "gamer".
+ * Clase que representa una fabrica de componentes "Standar".
  */
-public class FactoryComponenteGamer implements ComponenteFactory{
+public class FactoryComponenteStandar implements ComponenteFactory{
 
     /**
      * Implementación del creador de CPU
-     * @return una instancia del componente Corei9.
+     * @return una instancia del componente Corei7.
      */
     @Override public CPU creaCPU(){
-        return new Corei9();
+        return new Corei5();
     }
     
     /**
      * Implementación del creador de GPU's.
-     * @return una instancia del componente RTX3090.
+     * @return una instancia del componente RTX4070.
      */
     @Override public GPU creaGPU(){
-        return new RTX3090();
+        return new RTX4070Ti();
     }
 
     /**
      * Implementación del creador de memoria ram.
-     * @return una instancia del componente CorsairVengeance.
+     * @return una instancia del componente KingstonFury.
      */
     @Override public RAM creaRAM(){
-        return new CorsairVengeance();
+        return new KingstonFury();
     }
 
     /**
      * Implementación del creador de disco duro.
-     * @return una instancia del componente Kingston.
+     * @return una instancia del componente Samsung.
      */
     @Override public DiscoDuro creaDiscoDuro(){
-        return new Kingston();
+        return new Samsung();
     }
 
     /**
      * Implementación del creador de motherboard.
-     * @return una instancia del componente Gigabyte.
+     * @return una instancia del componente Motherboard.
      */
     @Override public Motherboard creaMotherboard(){
-        return new Gigabyte();
+        return new MSI();
     }
 
     /**
      * Implementación del creador de fuente de poder.
-     * @return una instancia del componente CorsairCX.
+     * @return una instancia del componente MSIMag.
      */
     @Override public FuenteDePoder creaFuenteDePoder(){
-        return new CorsairCX();
+        return new MSIMag();
     }
 
 

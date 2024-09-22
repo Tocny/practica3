@@ -4,39 +4,52 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.cpu;
  */
 public class Corei9 implements CPU{
     /** Nombre del procesador */ 
-    String nombre = "Core i9";
+    private String nombre = "Core i9";
     /** Marca del procesador */ 
-    String marca = "Intel";
+    private String marca = "Intel";
     /** Numero de nucleos */ 
-    int numeroDeNucleos = 24;
+    private int numeroDeNucleos = 24;
     /** Costo */ 
-    double costo = 7150;
+    private double costo = 7150;
+
     /**
      * Getter del nombre del procesador.
      * @return nombre
      */
-    public String getNombre() {
+    @Override public String getNombre() {
         return nombre;
     }
+
     /**
      * Getter del nombre del marca.
      * @return marca
      */
-    public String getMarca() {
+    @Override public String getMarca() {
         return marca;
     }
+
     /**
      * Getter del numero de nucleos.
      * @return numeroDeNucleos
      */
-    public int getNumeroDeNucleos() {
+    @Override public int getNumeroDeNucleos() {
         return numeroDeNucleos;
     }
+
     /**
      * Getter del costo del procesador.
      * @return costo
      */
-    public double getCosto() {
+    @Override public double getCosto() {
         return costo;
+    }
+
+    /**
+     * Método que brinda información del componente.
+     * @return una cadena que cuenta con las características del componente.
+     */
+    @Override public String descripcion() {
+        return String.format("%s %s de %d núcleos ($%.2f)", 
+            getMarca(), getNombre(), getNumeroDeNucleos(), getCosto());
     }
 }

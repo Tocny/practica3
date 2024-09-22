@@ -4,39 +4,52 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.ram;
  */
 public class CorsairVengeance implements RAM{
     /** Nombre de la ram */ 
-    String nombre = "Vengance";
+    private String nombre = "Vengance";
     /** Marca de la ram */ 
-    String marca = "Corsair";
+    private String marca = "Corsair";
     /** Nombre del socket */ 
-    int capacidad = 64;
+    private int capacidad = 64;
     /** Costo */ 
-    double costo = 3300;
+    private double costo = 3300;
+
     /**
      * Getter del nombre.
      * @return nombre
      */
-    public String getNombre() {
+    @Override public String getNombre() {
         return nombre;
     }
+
     /**
      * Getter del nombre del marca.
      * @return marca
      */
-    public String getMarca() {
+    @Override public String getMarca() {
         return marca;
     }
+
     /**
      * Getter de la capacidad.
      * @return capacidad
      */
-    public int getCapacidad() {
+    @Override public int getCapacidad() {
         return capacidad;
     }
+
     /**
      * Getter del costo.
      * @return costo
      */
-    public double getCosto() {
+    @Override public double getCosto() {
         return costo;
+    }
+
+    /**
+     * Método que brinda información del componente.
+     * @return una cadena que cuenta con las características del componente.
+     */
+    @Override public String descripcion() {
+        return String.format("%s %s de %d GB ($%.2f)", 
+                getMarca(), getNombre(), getCapacidad(), getCosto());
     }
 }

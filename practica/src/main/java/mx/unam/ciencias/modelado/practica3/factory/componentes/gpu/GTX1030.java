@@ -4,39 +4,52 @@ package mx.unam.ciencias.modelado.practica3.factory.componentes.gpu;
  */
 public class GTX1030 implements GPU{
     /** Nombre de la GPU */ 
-    String nombre = "GeForce GTX 1030";
+    private String nombre = "GeForce GTX 1030";
     /** Marca de la GPU */ 
-    String marca = "NVIDIA";
+    private String marca = "NVIDIA";
     /** Numero de nucleos */ 
-    String tipoDeMemoria = "GDDR4";
+    private String tipoDeMemoria = "GDDR4";
     /** Costo */ 
-    double costo = 2250;
+    private double costo = 2250;
+
     /**
      * Getter del nombre de la GPU.
      * @return nombre
      */
-    public String getNombre() {
+    @Override public String getNombre() {
         return nombre;
     }
+
     /**
      * Getter del nombre del marca.
      * @return marca
      */
-    public String getMarca() {
+    @Override public String getMarca() {
         return marca;
     }
+
     /**
      * Getter del tipo de memoria.
      * @return tipoDeMemoria
      */
-    public String getTipoDeMemoria() {
+    @Override public String getTipoDeMemoria() {
         return tipoDeMemoria;
     }
+
     /**
      * Getter del costo de la GPU.
      * @return costo
      */
-    public double getCosto() {
+    @Override public double getCosto() {
         return costo;
+    }
+
+    /**
+     * Método que brinda información del componente.
+     * @return una cadena que cuenta con las características del componente.
+     */
+    @Override public String descripcion() {
+        return String.format("%s %s con memoria %s ($%.2f)", 
+                getMarca(), getNombre(), getTipoDeMemoria(), getCosto());
     }
 }
