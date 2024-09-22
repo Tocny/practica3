@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.adapter.adapterGPU;
 /**
  * GPU concreta de la marca AMD.
  */
-public class RadeonRX7600 implements GPU{
+public class RadeonRX7600{
     /** Nombre de la GPU */ 
     String name = "Radeon RX7600";
     /** Marca de la GPU */ 

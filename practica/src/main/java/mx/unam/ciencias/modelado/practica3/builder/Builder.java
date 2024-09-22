@@ -3,7 +3,7 @@ package mx.unam.ciencias.modelado.practica3.builder;
 /**
  * Interfaz para los constructores de computadoras.
  */
-public interface PCBuilder{
+public interface Builder{
 
     /**Método para instalar (construir) el procesador */
     public void instalaCPU();

@@ -61,7 +61,7 @@ public class PCGamerBuilder implements Builder{
      * Implementación del método para instalar la fuente de poder.
      * Emplea la fabrica para setear la fuente de poder.
      */
-    @Override instalaFuenteDePoder(){
+    @Override public void instalaFuenteDePoder(){
         pc.setFuenteDePoder(fabrica.creaFuenteDePoder());
     }
 

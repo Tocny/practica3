@@ -1,5 +1,8 @@
 package mx.unam.ciencias.modelado.practica3.adapter.adapterGPU;
 
+import mx.unam.ciencias.modelado.practica3.factory.componentes.gpu.GPU;
+
+
 /**
  * Esta clase es un adaptador para la GPU
  */

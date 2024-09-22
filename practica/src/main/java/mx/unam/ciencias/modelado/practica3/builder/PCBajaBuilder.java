@@ -12,7 +12,7 @@ public class PCBajaBuilder implements Builder{
     private PC pc;
 
     /**Constructor de la clase, inicializa atributos. */
-    public PCGamerBuilder(){
+    public PCBajaBuilder(){
         fabrica = new FactoryComponenteBajo();
         pc = new PC();
     }
@@ -61,7 +61,7 @@ public class PCBajaBuilder implements Builder{
      * Implementación del método para instalar la fuente de poder.
      * Emplea la fabrica para setear la fuente de poder.
      */
-    @Override instalaFuenteDePoder(){
+    @Override public void instalaFuenteDePoder(){
         pc.setFuenteDePoder(fabrica.creaFuenteDePoder());
     }
 

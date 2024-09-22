@@ -1,5 +1,7 @@
 package mx.unam.ciencias.modelado.practica3.adapter.adapterCPU;
 
+import mx.unam.ciencias.modelado.practica3.factory.componentes.cpu.CPU;
+
 /**
  * Esta clase es un adaptador para la CPU
  */
