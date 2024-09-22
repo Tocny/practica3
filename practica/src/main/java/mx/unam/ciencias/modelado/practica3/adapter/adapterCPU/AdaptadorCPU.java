@@ -6,13 +6,13 @@ import mx.unam.ciencias.modelado.practica3.factory.componentes.cpu.CPU;
  * Esta clase es un adaptador para la CPU
  */
 public class AdaptadorCPU implements CPU {
-    private Ryzen7 ryzen;
+    private AMDcpu ryzen;
 
     /**
      * Constructor que recibe un objeto de tipo Ryzen7.
      * @param ryzen El objeto Ryzen7 que será adaptado a la interfaz CPU.
      */
-    public AdaptadorCPU(Ryzen7 ryzen) {
+    public AdaptadorCPU(AMDcpu ryzen) {
         this.ryzen = ryzen;
     }
 

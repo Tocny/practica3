@@ -2,7 +2,7 @@ package mx.unam.ciencias.modelado.practica3.adapter.adapterCPU;
 /**
  * Procesador concreto de la marca AMD.
  */
-public class Ryzen7{
+public class Ryzen7 implements AMDcpu{
     /** Nombre del procesador */ 
     String nombre = "Ryzen 5800X";
     /** Marca del procesador */ 
