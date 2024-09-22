@@ -7,7 +7,7 @@ public class RTX3090 implements GPU{
     String nombre = "GeForce RTX 3090";
     /** Marca de la GPU */ 
     String marca = "NVIDIA";
-    /** Numero de nucleos */ 
+    /** Tipo de memoria */ 
     String tipoDeMemoria = "GDDR6X";
     /** Costo */ 
     double costo = 23520;

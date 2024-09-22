@@ -7,7 +7,7 @@ public class RTX4070Ti implements GPU{
     String nombre = "GeForce RTX 4070Ti";
     /** Marca de la GPU */ 
     String marca = "NVIDIA";
-    /** Numero de nucleos */ 
+    /** Tipo de memoria */ 
     String tipoDeMemoria = "GDDR6X";
     /** Costo */ 
     double costo = 11500;

@@ -7,7 +7,7 @@ public class GTX1030 implements GPU{
     String nombre = "GeForce GTX 1030";
     /** Marca de la GPU */ 
     String marca = "NVIDIA";
-    /** Numero de nucleos */ 
+    /** Tipo de memoria */ 
     String tipoDeMemoria = "GDDR4";
     /** Costo */ 
     double costo = 2250;
