@@ -23,4 +23,10 @@ public interface Componente{
      * @return un double con el costo.
      */
     public double getCosto();
+
+    /**
+     * Método que brinda información del componente.
+     * @return una cadena que cuenta con las caracteristicas del componente.
+     */
+    public String descripcion();
 }

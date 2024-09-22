@@ -1,5 +1,6 @@
 package mx.unam.ciencias.modelado.practica3.factory.fabricas;
 
+
 /**
  * Clase que representa una fabrica de componentes "bajos".
  */
